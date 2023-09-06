@@ -6,14 +6,24 @@ import java.util.List;
 
 public class Posts {
 
+    private String contentPost;
     private Date postDate;
     private List<Comments> comments;
     private String senderPost;
 
-    public Posts(String senderPost){
+    public Posts(String contentPost, String senderPost){
+        this.contentPost = contentPost;
         this.senderPost = senderPost;
         this.postDate = new Date();
         this.comments = new ArrayList<>();
+    }
+
+    public String getContentPost() {
+        return contentPost;
+    }
+
+    public void setContentPost(String contentPost) {
+        this.contentPost = contentPost;
     }
 
     public Date getPostDate(){
@@ -30,6 +40,6 @@ public class Posts {
 
     @Override
     public String toString(){
-        return "Post fecha = " + postDate + ", comentarios" + comments.size() + ".";
+        return "Post: contenido = " + contentPost + " fecha = " + postDate + ", comentarios" + comments.size() + ".";
     }
 }
